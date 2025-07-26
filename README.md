@@ -2,7 +2,7 @@
 
 An AI-powered music recommendation system built using **KMeans**, **KNN**, **Flask**, and **Spotify API** with a beautiful modern web interface.
 
-![banner](https://img.freepik.com/premium-photo/music-notes-dancing-vibrations-dark-background-generative-ai_900706-21292.jpg)
+![banner](https://github.com/NavinBohara/New-music-recommendation-system/blob/main/banner.png)
 
 ---
 
