@@ -7,3 +7,5 @@ spotipy
 requests
 matplotlib
 Pillow
+flask
+gunicorn

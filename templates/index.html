@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎶 GeetYatra - Your Personalized Music Journey</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-music"></i>
+                <span>GeetYatra</span>
+            </div>
+            <div class="nav-subtitle">Your Personalized Music Journey</div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">
+                <span class="gradient-text">Discover</span> Your Next Favorite Song
+            </h1>
+            <p class="hero-subtitle">
+                Powered by AI and Machine Learning • Hindi & English Songs • Real-time Album Art
+            </p>
+        </div>
+        <div class="hero-background">
+            <div class="music-notes">
+                <i class="fas fa-music note note-1"></i>
+                <i class="fas fa-music note note-2"></i>
+                <i class="fas fa-music note note-3"></i>
+                <i class="fas fa-music note note-4"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Search Section -->
+            <section class="search-section">
+                <div class="search-container">
+                    <div class="search-box">
+                        <i class="fas fa-search search-icon"></i>
+                        <input type="text" id="searchInput" placeholder="Search for a song..." class="search-input">
+                        <div id="searchResults" class="search-results"></div>
+                    </div>
+                    
+                    <div class="song-selector">
+                        <label for="songSelect" class="select-label">
+                            <i class="fas fa-headphones"></i>
+                            Choose Your Song
+                        </label>
+                        <select id="songSelect" class="song-select">
+                            <option value="">Select a song to get started...</option>
+                            {% for song in songs %}
+                            <option value="{{ song }}">{{ song }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+
+                    <button id="recommendBtn" class="recommend-btn" disabled>
+                        <i class="fas fa-magic"></i>
+                        Get Recommendations
+                    </button>
+                </div>
+            </section>
+
+            <!-- Loading Section -->
+            <section id="loadingSection" class="loading-section" style="display: none;">
+                <div class="loading-container">
+                    <div class="loading-spinner"></div>
+                    <p class="loading-text">Finding your perfect music matches...</p>
+                </div>
+            </section>
+
+            <!-- Results Section -->
+            <section id="resultsSection" class="results-section" style="display: none;">
+                <div class="results-header">
+                    <h2 class="results-title">
+                        <i class="fas fa-star"></i>
+                        Recommended for You
+                    </h2>
+                    <p class="results-subtitle">Based on your selected song</p>
+                </div>
+                
+                <div id="recommendationsContainer" class="recommendations-grid">
+                    <!-- Recommendations will be populated here -->
+                </div>
+            </section>
+
+            <!-- Features Section -->
+            <section class="features-section">
+                <h2 class="features-title">Why Choose GeetYatra?</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h3>AI-Powered</h3>
+                        <p>Advanced machine learning algorithms using KNN and K-Means clustering</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <h3>Multi-Language</h3>
+                        <p>Supports both Hindi and English songs for diverse music discovery</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-image"></i>
+                        </div>
+                        <h3>Album Art</h3>
+                        <p>Real-time album covers fetched from Spotify API</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <h3>Instant Results</h3>
+                        <p>Get personalized recommendations in seconds</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>GeetYatra</h3>
+                    <p>Your AI-powered music companion for discovering new songs and artists.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Technologies</h4>
+                    <ul>
+                        <li>Flask & Python</li>
+                        <li>Machine Learning</li>
+                        <li>Spotify API</li>
+                        <li>Modern Web Design</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Features</h4>
+                    <ul>
+                        <li>KNN Clustering</li>
+                        <li>Real-time Search</li>
+                        <li>Album Art Display</li>
+                        <li>Responsive Design</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 GeetYatra. Made with ❤️ for music lovers.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html> 
