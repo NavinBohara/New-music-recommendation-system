@@ -84,7 +84,7 @@ music_recommendation1/
    ```
 
 4. **Open your browser**
-   Navigate to `http://localhost:8080`
+   Navigate to `https://geetyatra.up.railway.app/`
 
 ---
 
